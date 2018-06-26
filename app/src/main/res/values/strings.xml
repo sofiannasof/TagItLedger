@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TagItLedger</string>
+    <string name="notification_title">Subscription received</string>
+    <string name="action_digital_product_manufacturer">Digital Product (issue asset)</string>
+    <string name="action_digital_product_retailer">Digital Product (transfer asset)</string>
+    <string name="action_brand_protection">Brand Protection</string>
+    <string name="action_dynamic_pricing">Dynamic Pricing</string>
+</resources>

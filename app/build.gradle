@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "eu.ubitech.smenesidou.tagitledger"
+        minSdkVersion 25
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+ext {
+    supportVersion = "24.2.1"
+    dagger = "2.0.1"
+    annotation = "10.0-b28"
+    retrofit = "2.0.2"
+    okhttp = "3.2.0"
+    okio = "1.7.0"
+    rxjava = "1.2.4"
+    rxandroid = "1.2.1"
+    gson = "2.6.2"
+    mint = "5.0.0"
+    stetho = "1.0.0"
+    stetho_okhttp = "1.0.1"
+    daimajia_easing = "2.0@aar"
+    daimajia_androidanimations = "2.2@aar"
+    shimmer = "0.1.0@aar"
+    mqttv3 = "1.1.0"
+    paho = "1.1.1"
+    timber = "4.1.2"
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation "com.android.support:support-compat:27.1.1"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation(group: 'com.evrythng', name: 'evrythng-java-wrapper', version: '1.33'){exclude module: 'commons-logging'}
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //Dagger 2
+    implementation "com.google.dagger:dagger:${dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${dagger}"
+    implementation "org.glassfish:javax.annotation:${annotation}"
+    //Retrofit 2
+    implementation "com.squareup.retrofit2:retrofit:${retrofit}"
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:${okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okhttp}"
+    implementation "com.squareup.okio:okio:${okio}"
+    //Rx
+    implementation "io.reactivex:rxjava:${rxjava}"
+    implementation "io.reactivex:rxandroid:${rxandroid}"
+    implementation "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
+    //Gson
+    implementation "com.google.code.gson:gson:${gson}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofit}"
+    //Mqtt
+    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${mqttv3}"
+    implementation "org.eclipse.paho:org.eclipse.paho.android.service:${paho}"
+    implementation files('libs/bcprov-jdk16-146.jar')
+    //Timber
+    implementation "com.jakewharton.timber:timber:${timber}"
+}

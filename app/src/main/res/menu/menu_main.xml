@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="eu.ubitech.smenesidou.tagitledger.MainActivity">
+    <item
+        android:id="@+id/action_digital_product_manufacturer"
+        android:orderInCategory="100"
+        android:title="@string/action_digital_product_manufacturer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_digital_product_retailer"
+        android:orderInCategory="100"
+        android:title="@string/action_digital_product_retailer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_dynamic_pricing"
+        android:orderInCategory="100"
+        android:title="@string/action_dynamic_pricing"
+        app:showAsAction="never" />
+</menu>
