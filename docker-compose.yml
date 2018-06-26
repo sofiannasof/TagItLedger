@@ -1,0 +1,29 @@
+version: '2.0'
+
+services:
+  nxt1:
+    image: nxt1
+    container_name: nxt
+    build: .
+    ports:
+      - "7876:7876"
+      - "7874:7874"
+
+  nxt2:
+    image: nxt2
+    build: .
+    ports:
+      - "7886:7876"
+      - "7884:7874"
+
+
+networks:
+  ee-net:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.18.0.0/24
+        gateway: 172.18.0.1
+        aux_addresses:
+          nxt1: 172.18.0.2
+          nxt2: 172.18.0.3
